@@ -196,9 +196,9 @@ void FakeHmatCUDA::initDiagBlocksMatrix(const int hmat_size, const int block_siz
         jend = full_blocks_metadata[i].j_end;
 
         // Set the pointers for this block
-        h_data_pointers_[i] = d_blocks_data_ + pos_data * sizeof(double);
-        h_x_pointers_[i] = d_x_ + j0 * sizeof(double);
-        h_y_pointers_[i] = d_y_ + i0 * sizeof(double);
+        h_data_pointers_[i] = d_blocks_data_ + pos_data;
+        h_x_pointers_[i] = d_x_ + j0;
+        h_y_pointers_[i] = d_y_ + i0;
 
         // Increment the position for the data pointer
         pos_data += (iend +1 - i0) * (jend + 1 - j0);
